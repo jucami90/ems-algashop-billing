@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.algaworks.algashop.billing.BillingApplicationIT" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-05-27T05:41:32.731Z" hostname="Juans-Mac-mini.local" time="0.072">
+<testsuite name="com.algaworks.algashop.billing.BillingApplicationIT" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-05-27T21:14:26.309Z" hostname="192.168.0.5" time="0.042">
   <properties/>
-  <testcase name="contextLoads()" classname="com.algaworks.algashop.billing.BillingApplicationIT" time="0.072"/>
+  <testcase name="contextLoads()" classname="com.algaworks.algashop.billing.BillingApplicationIT" time="0.042"/>
   <system-out><![CDATA[Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
-02:41:31.695 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.algaworks.algashop.billing.BillingApplicationIT]: BillingApplicationIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-02:41:31.733 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.algaworks.algashop.billing.BillingApplication for test class com.algaworks.algashop.billing.BillingApplicationIT
+18:14:24.721 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.algaworks.algashop.billing.BillingApplicationIT]: BillingApplicationIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+18:14:24.766 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.algaworks.algashop.billing.BillingApplication for test class com.algaworks.algashop.billing.BillingApplicationIT
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -15,19 +15,19 @@
 
  :: Spring Boot ::               (v3.5.14)
 
-2026-05-27T02:41:31.883-03:00  INFO 41302 --- [billing] [    Test worker] c.a.a.billing.BillingApplicationIT       : Starting BillingApplicationIT using Java 21.0.8 with PID 41302 (started by jucami90 in /Users/jucami90/Documents/Curso Microservicios/EMS/algashop/microservices/billing)
-2026-05-27T02:41:31.883-03:00  INFO 41302 --- [billing] [    Test worker] c.a.a.billing.BillingApplicationIT       : The following 1 profile is active: "test"
-2026-05-27T02:41:32.089-03:00  INFO 41302 --- [billing] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-27T02:41:32.098-03:00  INFO 41302 --- [billing] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
-2026-05-27T02:41:32.218-03:00  INFO 41302 --- [billing] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-05-27T02:41:32.241-03:00  INFO 41302 --- [billing] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.49.Final
-2026-05-27T02:41:32.253-03:00  INFO 41302 --- [billing] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-05-27T02:41:32.346-03:00  INFO 41302 --- [billing] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-27T02:41:32.357-03:00  INFO 41302 --- [billing] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-05-27T02:41:32.417-03:00  INFO 41302 --- [billing] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:billing-test user=SA
-2026-05-27T02:41:32.417-03:00  INFO 41302 --- [billing] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-05-27T02:41:32.427-03:00  WARN 41302 --- [billing] [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-27T02:41:32.433-03:00  INFO 41302 --- [billing] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2026-05-27T18:14:24.923-03:00  INFO 2430 --- [billing] [    Test worker] c.a.a.billing.BillingApplicationIT       : Starting BillingApplicationIT using Java 21.0.8 with PID 2430 (started by jucami90 in /Users/jucami90/Documents/Curso Microservicios/EMS/algashop/microservices/billing)
+2026-05-27T18:14:24.924-03:00  INFO 2430 --- [billing] [    Test worker] c.a.a.billing.BillingApplicationIT       : The following 1 profile is active: "test"
+2026-05-27T18:14:25.205-03:00  INFO 2430 --- [billing] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-27T18:14:25.236-03:00  INFO 2430 --- [billing] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 2 JPA repository interfaces.
+2026-05-27T18:14:25.433-03:00  INFO 2430 --- [billing] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-27T18:14:25.458-03:00  INFO 2430 --- [billing] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.49.Final
+2026-05-27T18:14:25.470-03:00  INFO 2430 --- [billing] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-27T18:14:25.567-03:00  INFO 2430 --- [billing] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-27T18:14:25.578-03:00  INFO 2430 --- [billing] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-27T18:14:25.639-03:00  INFO 2430 --- [billing] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:billing-test user=SA
+2026-05-27T18:14:25.640-03:00  INFO 2430 --- [billing] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-27T18:14:25.650-03:00  WARN 2430 --- [billing] [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-27T18:14:25.656-03:00  INFO 2430 --- [billing] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 2.3.232
@@ -35,11 +35,21 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-05-27T02:41:32.542-03:00  INFO 41302 --- [billing] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-27T02:41:32.543-03:00  INFO 41302 --- [billing] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-27T02:41:32.585-03:00  WARN 41302 --- [billing] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-05-27T02:41:32.698-03:00  INFO 41302 --- [billing] [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:billing-test'
-2026-05-27T02:41:32.726-03:00  INFO 41302 --- [billing] [    Test worker] c.a.a.billing.BillingApplicationIT       : Started BillingApplicationIT in 0.94 seconds (process running for 1.365)
+2026-05-27T18:14:25.976-03:00  INFO 2430 --- [billing] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists credit_card cascade 
+Hibernate: drop table if exists invoice cascade 
+Hibernate: drop table if exists invoice_line_item cascade 
+Hibernate: drop table if exists payment_settings cascade 
+Hibernate: create table credit_card (exp_month integer, exp_year integer, created_at timestamp(6) with time zone, customer_id uuid, id uuid not null, brand varchar(255), gateway_code varchar(255), last_numbers varchar(255), primary key (id))
+Hibernate: create table invoice (total_amount numeric(38,2), canceled_at timestamp(6) with time zone, created_at timestamp(6) with time zone, expires_at timestamp(6) with time zone, issue_date timestamp(6) with time zone, last_modified_date timestamp(6) with time zone, paid_at timestamp(6) with time zone, version bigint not null, created_by_user_id uuid, customer_id uuid, id uuid not null, last_modified_by_user_id uuid, payment_settings_id uuid unique, cancel_reason varchar(255), order_id varchar(255), payer_address_city varchar(255), payer_address_complement varchar(255), payer_address_neighborhood varchar(255), payer_address_number varchar(255), payer_address_state varchar(255), payer_address_street varchar(255), payer_address_zip_code varchar(255), payer_document varchar(255), payer_email varchar(255), payer_full_name varchar(255), payer_phone varchar(255), status enum ('CANCELED','PAID','UNPAID'), primary key (id))
+Hibernate: create table invoice_line_item ("items_amount" numeric(38,2), "items_number" integer, invoice_id uuid not null, "items_name" varchar(255))
+Hibernate: create table payment_settings (credit_card_id uuid, id uuid not null, gateway_code varchar(255), method enum ('CREDIT_CARD','GATEWAY_BALANCE'), primary key (id))
+Hibernate: alter table if exists invoice add constraint FKc3y0lyg3tb97vai59q7ogi6f0 foreign key (payment_settings_id) references payment_settings
+Hibernate: alter table if exists invoice_line_item add constraint FK4560gqjs1jn62cp4govj4akb3 foreign key (invoice_id) references invoice
+2026-05-27T18:14:25.994-03:00  INFO 2430 --- [billing] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-27T18:14:26.168-03:00  WARN 2430 --- [billing] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-27T18:14:26.272-03:00  INFO 2430 --- [billing] [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:billing-test'
+2026-05-27T18:14:26.303-03:00  INFO 2430 --- [billing] [    Test worker] c.a.a.billing.BillingApplicationIT       : Started BillingApplicationIT in 1.48 seconds (process running for 1.935)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

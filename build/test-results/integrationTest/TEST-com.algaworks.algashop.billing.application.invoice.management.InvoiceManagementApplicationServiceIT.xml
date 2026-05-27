@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.algaworks.algashop.billing.application.invoice.management.InvoiceManagementApplicationServiceIT" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-05-27T21:14:26.685Z" hostname="192.168.0.5" time="0.268">
+  <properties/>
+  <testcase name="shouldGenerateInvoiceWithCreditCardAsPayment()" classname="com.algaworks.algashop.billing.application.invoice.management.InvoiceManagementApplicationServiceIT" time="0.245"/>
+  <testcase name="shouldProcessInvoicePayment()" classname="com.algaworks.algashop.billing.application.invoice.management.InvoiceManagementApplicationServiceIT" time="0.015"/>
+  <testcase name="shouldGenerateInvoiceWithGatewayBalanceAsPayment()" classname="com.algaworks.algashop.billing.application.invoice.management.InvoiceManagementApplicationServiceIT" time="0.006"/>
+  <system-out><![CDATA[2026-05-27T18:14:26.355-03:00  INFO 2430 --- [billing] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.algaworks.algashop.billing.application.invoice.management.InvoiceManagementApplicationServiceIT]: InvoiceManagementApplicationServiceIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-27T18:14:26.365-03:00  INFO 2430 --- [billing] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.algaworks.algashop.billing.BillingApplication for test class com.algaworks.algashop.billing.application.invoice.management.InvoiceManagementApplicationServiceIT
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.14)
+
+2026-05-27T18:14:26.378-03:00  INFO 2430 --- [billing] [    Test worker] .m.InvoiceManagementApplicationServiceIT : Starting InvoiceManagementApplicationServiceIT using Java 21.0.8 with PID 2430 (started by jucami90 in /Users/jucami90/Documents/Curso Microservicios/EMS/algashop/microservices/billing)
+2026-05-27T18:14:26.378-03:00  INFO 2430 --- [billing] [    Test worker] .m.InvoiceManagementApplicationServiceIT : The following 1 profile is active: "test"
+2026-05-27T18:14:26.447-03:00  INFO 2430 --- [billing] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-27T18:14:26.455-03:00  INFO 2430 --- [billing] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 2 JPA repository interfaces.
+2026-05-27T18:14:26.519-03:00  INFO 2430 --- [billing] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-27T18:14:26.520-03:00  INFO 2430 --- [billing] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-27T18:14:26.522-03:00  INFO 2430 --- [billing] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-27T18:14:26.523-03:00  INFO 2430 --- [billing] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-05-27T18:14:26.523-03:00  INFO 2430 --- [billing] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:billing-test user=SA
+2026-05-27T18:14:26.523-03:00  INFO 2430 --- [billing] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-05-27T18:14:26.523-03:00  WARN 2430 --- [billing] [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-27T18:14:26.524-03:00  INFO 2430 --- [billing] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-27T18:14:26.548-03:00  INFO 2430 --- [billing] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists credit_card cascade 
+Hibernate: drop table if exists invoice cascade 
+Hibernate: drop table if exists invoice_line_item cascade 
+Hibernate: drop table if exists payment_settings cascade 
+Hibernate: create table credit_card (exp_month integer, exp_year integer, created_at timestamp(6) with time zone, customer_id uuid, id uuid not null, brand varchar(255), gateway_code varchar(255), last_numbers varchar(255), primary key (id))
+Hibernate: create table invoice (total_amount numeric(38,2), canceled_at timestamp(6) with time zone, created_at timestamp(6) with time zone, expires_at timestamp(6) with time zone, issue_date timestamp(6) with time zone, last_modified_date timestamp(6) with time zone, paid_at timestamp(6) with time zone, version bigint not null, created_by_user_id uuid, customer_id uuid, id uuid not null, last_modified_by_user_id uuid, payment_settings_id uuid unique, cancel_reason varchar(255), order_id varchar(255), payer_address_city varchar(255), payer_address_complement varchar(255), payer_address_neighborhood varchar(255), payer_address_number varchar(255), payer_address_state varchar(255), payer_address_street varchar(255), payer_address_zip_code varchar(255), payer_document varchar(255), payer_email varchar(255), payer_full_name varchar(255), payer_phone varchar(255), status enum ('CANCELED','PAID','UNPAID'), primary key (id))
+Hibernate: create table invoice_line_item ("items_amount" numeric(38,2), "items_number" integer, invoice_id uuid not null, "items_name" varchar(255))
+Hibernate: create table payment_settings (credit_card_id uuid, id uuid not null, gateway_code varchar(255), method enum ('CREDIT_CARD','GATEWAY_BALANCE'), primary key (id))
+Hibernate: alter table if exists invoice add constraint FKc3y0lyg3tb97vai59q7ogi6f0 foreign key (payment_settings_id) references payment_settings
+Hibernate: alter table if exists invoice_line_item add constraint FK4560gqjs1jn62cp4govj4akb3 foreign key (invoice_id) references invoice
+2026-05-27T18:14:26.554-03:00  INFO 2430 --- [billing] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-27T18:14:26.628-03:00  WARN 2430 --- [billing] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-27T18:14:26.671-03:00  INFO 2430 --- [billing] [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:billing-test'
+2026-05-27T18:14:26.683-03:00  INFO 2430 --- [billing] [    Test worker] .m.InvoiceManagementApplicationServiceIT : Started InvoiceManagementApplicationServiceIT in 0.317 seconds (process running for 2.314)
+Hibernate: select cc1_0.id,cc1_0.brand,cc1_0.created_at,cc1_0.customer_id,cc1_0.exp_month,cc1_0.exp_year,cc1_0.gateway_code,cc1_0.last_numbers from credit_card cc1_0 where cc1_0.id=?
+Hibernate: insert into credit_card (brand,created_at,customer_id,exp_month,exp_year,gateway_code,last_numbers,id) values (?,?,?,?,?,?,?,?)
+Hibernate: select count(*) from credit_card cc1_0 where cc1_0.id=?
+Hibernate: select i1_0.id from invoice i1_0 where i1_0.order_id=? fetch first ? rows only
+Hibernate: select i1_0.id,i1_0.cancel_reason,i1_0.canceled_at,i1_0.created_at,i1_0.created_by_user_id,i1_0.customer_id,i1_0.expires_at,i1_0.issue_date,i1_0.last_modified_by_user_id,i1_0.last_modified_date,i1_0.order_id,i1_0.paid_at,i1_0.payer_address_city,i1_0.payer_address_complement,i1_0.payer_address_neighborhood,i1_0.payer_address_number,i1_0.payer_address_state,i1_0.payer_address_street,i1_0.payer_address_zip_code,i1_0.payer_document,i1_0.payer_email,i1_0.payer_full_name,i1_0.payer_phone,ps1_0.id,ps1_0.credit_card_id,ps1_0.gateway_code,ps1_0.method,i1_0.status,i1_0.total_amount,i1_0.version from invoice i1_0 left join payment_settings ps1_0 on ps1_0.id=i1_0.payment_settings_id where i1_0.id=?
+Hibernate: select ps1_0.id,ps1_0.credit_card_id,ps1_0.gateway_code,i1_0.id,i1_0.cancel_reason,i1_0.canceled_at,i1_0.created_at,i1_0.created_by_user_id,i1_0.customer_id,i1_0.expires_at,i1_0.issue_date,i1_0.last_modified_by_user_id,i1_0.last_modified_date,i1_0.order_id,i1_0.paid_at,i1_0.payer_address_city,i1_0.payer_address_complement,i1_0.payer_address_neighborhood,i1_0.payer_address_number,i1_0.payer_address_state,i1_0.payer_address_street,i1_0.payer_address_zip_code,i1_0.payer_document,i1_0.payer_email,i1_0.payer_full_name,i1_0.payer_phone,i1_0.status,i1_0.total_amount,i1_0.version,ps1_0.method from payment_settings ps1_0 left join invoice i1_0 on ps1_0.id=i1_0.payment_settings_id where ps1_0.id=?
+Hibernate: insert into payment_settings (credit_card_id,gateway_code,method,id) values (?,?,?,?)
+Hibernate: insert into invoice (cancel_reason,canceled_at,created_at,created_by_user_id,customer_id,expires_at,issue_date,last_modified_by_user_id,last_modified_date,order_id,paid_at,payer_address_city,payer_address_complement,payer_address_neighborhood,payer_address_number,payer_address_state,payer_address_street,payer_address_zip_code,payer_document,payer_email,payer_full_name,payer_phone,payment_settings_id,status,total_amount,version,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into invoice_line_item (invoice_id,"items_amount","items_name","items_number") values (?,?,?,?)
+Hibernate: select i1_0.id,i1_0.cancel_reason,i1_0.canceled_at,i1_0.created_at,i1_0.created_by_user_id,i1_0.customer_id,i1_0.expires_at,i1_0.issue_date,i1_0.last_modified_by_user_id,i1_0.last_modified_date,i1_0.order_id,i1_0.paid_at,i1_0.payer_address_city,i1_0.payer_address_complement,i1_0.payer_address_neighborhood,i1_0.payer_address_number,i1_0.payer_address_state,i1_0.payer_address_street,i1_0.payer_address_zip_code,i1_0.payer_document,i1_0.payer_email,i1_0.payer_full_name,i1_0.payer_phone,ps1_0.id,ps1_0.credit_card_id,ps1_0.gateway_code,ps1_0.method,i1_0.status,i1_0.total_amount,i1_0.version from invoice i1_0 left join payment_settings ps1_0 on ps1_0.id=i1_0.payment_settings_id where i1_0.id=?
+Hibernate: select ps1_0.id,ps1_0.credit_card_id,ps1_0.gateway_code,i1_0.id,i1_0.cancel_reason,i1_0.canceled_at,i1_0.created_at,i1_0.created_by_user_id,i1_0.customer_id,i1_0.expires_at,i1_0.issue_date,i1_0.last_modified_by_user_id,i1_0.last_modified_date,i1_0.order_id,i1_0.paid_at,i1_0.payer_address_city,i1_0.payer_address_complement,i1_0.payer_address_neighborhood,i1_0.payer_address_number,i1_0.payer_address_state,i1_0.payer_address_street,i1_0.payer_address_zip_code,i1_0.payer_document,i1_0.payer_email,i1_0.payer_full_name,i1_0.payer_phone,i1_0.status,i1_0.total_amount,i1_0.version,ps1_0.method from payment_settings ps1_0 left join invoice i1_0 on ps1_0.id=i1_0.payment_settings_id where ps1_0.id=?
+Hibernate: insert into payment_settings (credit_card_id,gateway_code,method,id) values (?,?,?,?)
+Hibernate: insert into invoice (cancel_reason,canceled_at,created_at,created_by_user_id,customer_id,expires_at,issue_date,last_modified_by_user_id,last_modified_date,order_id,paid_at,payer_address_city,payer_address_complement,payer_address_neighborhood,payer_address_number,payer_address_state,payer_address_street,payer_address_zip_code,payer_document,payer_email,payer_full_name,payer_phone,payment_settings_id,status,total_amount,version,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into invoice_line_item (invoice_id,"items_amount","items_name","items_number") values (?,?,?,?)
+Hibernate: update payment_settings set credit_card_id=?,gateway_code=?,method=? where id=?
+Hibernate: update invoice set cancel_reason=?,canceled_at=?,created_at=?,created_by_user_id=?,customer_id=?,expires_at=?,issue_date=?,last_modified_by_user_id=?,last_modified_date=?,order_id=?,paid_at=?,payer_address_city=?,payer_address_complement=?,payer_address_neighborhood=?,payer_address_number=?,payer_address_state=?,payer_address_street=?,payer_address_zip_code=?,payer_document=?,payer_email=?,payer_full_name=?,payer_phone=?,payment_settings_id=?,status=?,total_amount=?,version=? where id=?
+Hibernate: select i1_0.id from invoice i1_0 where i1_0.order_id=? fetch first ? rows only
+Hibernate: select i1_0.id,i1_0.cancel_reason,i1_0.canceled_at,i1_0.created_at,i1_0.created_by_user_id,i1_0.customer_id,i1_0.expires_at,i1_0.issue_date,i1_0.last_modified_by_user_id,i1_0.last_modified_date,i1_0.order_id,i1_0.paid_at,i1_0.payer_address_city,i1_0.payer_address_complement,i1_0.payer_address_neighborhood,i1_0.payer_address_number,i1_0.payer_address_state,i1_0.payer_address_street,i1_0.payer_address_zip_code,i1_0.payer_document,i1_0.payer_email,i1_0.payer_full_name,i1_0.payer_phone,ps1_0.id,ps1_0.credit_card_id,ps1_0.gateway_code,ps1_0.method,i1_0.status,i1_0.total_amount,i1_0.version from invoice i1_0 left join payment_settings ps1_0 on ps1_0.id=i1_0.payment_settings_id where i1_0.id=?
+Hibernate: select ps1_0.id,ps1_0.credit_card_id,ps1_0.gateway_code,i1_0.id,i1_0.cancel_reason,i1_0.canceled_at,i1_0.created_at,i1_0.created_by_user_id,i1_0.customer_id,i1_0.expires_at,i1_0.issue_date,i1_0.last_modified_by_user_id,i1_0.last_modified_date,i1_0.order_id,i1_0.paid_at,i1_0.payer_address_city,i1_0.payer_address_complement,i1_0.payer_address_neighborhood,i1_0.payer_address_number,i1_0.payer_address_state,i1_0.payer_address_street,i1_0.payer_address_zip_code,i1_0.payer_document,i1_0.payer_email,i1_0.payer_full_name,i1_0.payer_phone,i1_0.status,i1_0.total_amount,i1_0.version,ps1_0.method from payment_settings ps1_0 left join invoice i1_0 on ps1_0.id=i1_0.payment_settings_id where ps1_0.id=?
+Hibernate: insert into payment_settings (credit_card_id,gateway_code,method,id) values (?,?,?,?)
+Hibernate: insert into invoice (cancel_reason,canceled_at,created_at,created_by_user_id,customer_id,expires_at,issue_date,last_modified_by_user_id,last_modified_date,order_id,paid_at,payer_address_city,payer_address_complement,payer_address_neighborhood,payer_address_number,payer_address_state,payer_address_street,payer_address_zip_code,payer_document,payer_email,payer_full_name,payer_phone,payment_settings_id,status,total_amount,version,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into invoice_line_item (invoice_id,"items_amount","items_name","items_number") values (?,?,?,?)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
