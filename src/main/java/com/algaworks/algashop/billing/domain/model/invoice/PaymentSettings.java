@@ -3,10 +3,7 @@ package com.algaworks.algashop.billing.domain.model.invoice;
 import com.algaworks.algashop.billing.domain.model.DomainException;
 import com.algaworks.algashop.billing.domain.model.IdGenerator;
 import io.micrometer.common.util.StringUtils;
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Objects;
@@ -17,9 +14,10 @@ import java.util.UUID;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
-@Embeddable
+@Entity
 public class PaymentSettings {
 
+    @Id
     @EqualsAndHashCode.Include
     private UUID id;
     private UUID creditCardId;

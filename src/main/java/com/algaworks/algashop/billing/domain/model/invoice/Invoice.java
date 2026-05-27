@@ -34,7 +34,7 @@ public class Invoice {
     @Enumerated(EnumType.STRING)
     private InvoiceStatus status;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private PaymentSettings paymentSettings;
 
     @ElementCollection
